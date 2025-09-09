@@ -4,7 +4,8 @@
   "description": "un gestor de fechas para eventos usando npm",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node main.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/Kevinlevin200/Trabajo_Software#readme",
   "dependencies": {
-    "date-fns": "^4.1.0"
+    "date-fns": "^4.1.0",
+    "inquirer": "^12.9.4"
   }
 }
