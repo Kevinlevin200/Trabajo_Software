@@ -1,0 +1,26 @@
+{
+  "name": "date_gestor",
+  "version": "1.0.0",
+  "description": "un gestor de fechas para eventos usando npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kevinlevin200/Trabajo_Software.git"
+  },
+  "keywords": [
+    "node",
+    "gestor"
+  ],
+  "author": "Juan Camilo Rojas Arenas, Kevin Santiago Rivero Rueda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kevinlevin200/Trabajo_Software/issues"
+  },
+  "homepage": "https://github.com/Kevinlevin200/Trabajo_Software#readme",
+  "dependencies": {
+    "date-fns": "^4.1.0"
+  }
+}
