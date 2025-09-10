@@ -1,56 +1,101 @@
-## Administrador de Fechas para Eventos
+# 📅 Administrador de Fechas para Eventos
 
-# Descripción del problema
+## 📝 Descripción del problema
 
-En la vida diaria, muchas personas necesitan organizar sus actividades y llevar un control de eventos importantes como reuniones, cumpleaños, entregas de proyectos o recordatorios.
+En la vida diaria, muchas personas necesitan organizar sus actividades y llevar un control de eventos importantes como reuniones, cumpleaños, entregas de proyectos o recordatorios.  
 Sin embargo, manejar fechas puede ser confuso cuando se requiere:
 
-- Calcular el tiempo que falta para un evento.
+- Calcular el tiempo que falta para un evento.  
+- Comparar fechas entre sí.  
+- Formatear fechas en distintos estilos según el contexto.  
 
-- Comparar fechas entre sí.
+Este proyecto resuelve esa necesidad mediante una **aplicación de consola en Node.js**, que permite gestionar eventos con un menú interactivo y utiliza la librería **date-fns** para el manejo de fechas.
 
-- Formatear fechas en distintos estilos según el contexto.
+---
 
-Este proyecto resuelve esa necesidad mediante una aplicación de consola sencilla en Node.js, que permite gestionar eventos con un menú interactivo y utiliza la librería date-fns para el manejo de fechas.
+## 📦 Librería utilizada
 
-# Librería utilizada
+**Librería:** [date-fns](https://www.npmjs.com/package/date-fns)  
 
-Librería: date-fns
+### ✅ Justificación
 
-# Justificación:
+- Proporciona funciones modernas y optimizadas para el manejo de fechas.  
+- Es modular, lo que permite importar solo las funciones necesarias.  
+- Ofrece soporte para múltiples formatos y cálculos de tiempo.  
+- Es una alternativa ligera y eficiente frente a librerías más pesadas como **moment.js**.  
 
-Proporciona funciones modernas y optimizadas para el manejo de fechas.
+---
 
-Es modular, lo que permite importar solo las funciones necesarias.
+## ⚙️ Implementación
 
-Ofrece soporte para múltiples formatos y cálculos de tiempo.
+La aplicación de consola fue desarrollada en **Node.js** con un menú interactivo que incluye las siguientes opciones:
 
-Es una alternativa ligera y eficiente frente a librerías más pesadas como moment.js.
+1. **Agregar evento** → Registrar un evento con nombre, tipo, fecha, precio y estado.  
+2. **Modificar fechas** → Cambiar la fecha de un evento ya existente.  
+3. **Ver eventos por fecha** → Buscar todos los eventos programados en una fecha determinada.  
+4. **Eliminar un evento** → Remover un evento registrado (con confirmación de seguridad).  
+5. **Ver todos los eventos** → Mostrar los eventos registrados, ordenados por fecha.  
+6. **Salir** → Cierra el programa.  
 
-# Implementación
+---
 
-La aplicación de consola fue desarrollada en Node.js con un menú interactivo que incluye al menos tres opciones:
+## 📌 Uso de *date-fns*
 
-Registrar un evento con nombre y fecha.
+La librería **date-fns** se utiliza para:
 
-Calcular diferencia de días entre la fecha actual y un evento.
+- Validar fechas ingresadas por el usuario.  
+- Formatear fechas en distintos estilos (`dd/MM/yyyy`, `yyyy-MM-dd`).  
+- Calcular diferencias de días entre la fecha actual y un evento.  
+- Comparar fechas con precisión (ejemplo: verificar eventos en el mismo día).  
 
-Formatear una fecha en diferentes estilos (ej. dd/MM/yyyy, MMMM dd, yyyy).
+---
 
-(no se si cambiar eso de arriba de la implementacion, ud digame)
+## 🚀 Instalación
 
-El menú se despliega en consola y guía al usuario paso a paso.
-El uso de date-fns es clave para manejar el cálculo y formato de fechas de manera confiable y sencilla.
+1. Clonar el repositorio:  
 
-# Estructura del proyecto
+```bash
+git clone https://github.com/Kevinlevin200/Trabajo_Software.git
+cd Trabajo_Software
+```
 
--no se jaja-
+2. Instalar dependencias:  
 
-Video de presentación
+```bash
+npm install
+```
 
-(aqui el video)
+---
 
-# Autores
+## ▶️ Uso del programa
 
-Kevin Santiago Rivero Rueda
-Juan Camilo Rojas Arenas
+Ejecutar el programa en consola:  
+
+```bash
+node main.js
+```
+
+---
+
+## 📷 Ejemplo de ejecución
+
+```bash
+=== GESTOR DE FECHAS ===
+1. Agregar evento
+2. Modificar fechas
+3. Ver eventos por fecha
+4. Eliminar un evento
+5. Ver todos los eventos
+6. Salir
+```
+
+---
+
+## 👨‍💻 Autores
+
+- Juan Camilo Rojas Arenas
+- Kevin Santiago Rivero Rueda
+
+
+## Enlace video
+[Video]()
