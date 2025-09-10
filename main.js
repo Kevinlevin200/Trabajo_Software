@@ -16,7 +16,8 @@ function mostrarMenu() {
   console.log("2. Modificar fechas");
   console.log("3. Ver eventos por fecha");
   console.log("4. Eliminar un evento");
-  console.log("5. Salir");
+  console.log("5. Ver todos los eventos");
+  console.log("6. Salir");
 }
 
 function preguntar(texto) {
@@ -27,7 +28,7 @@ function preguntar(texto) {
 
 async function menu() {
   let continuar = true;
-  
+
   while (continuar) {
     mostrarMenu();
 
@@ -48,6 +49,9 @@ async function menu() {
         await eliminarEvento();
         break;
       case "5":
+        await mostrarTodosLosEventos();
+        break;
+      case "6":
         console.log("Saliendo...");
         continuar = false;
         rl.close(); // Cerrar la instancia global
@@ -118,7 +122,7 @@ class Evento {
       // Si es string, intentar parsearlo
       const regex = /^\d{4}-\d{2}-\d{2}$/;
       if (!regex.test(fechaString)) return false;
-      
+
       const fechaParseada = parseISO(fechaString);
       if (!isValid(fechaParseada)) return false;
 
@@ -183,7 +187,7 @@ class Evento {
   mostrarInfo() {
     const diasRestantes = this.diasRestantes;
     let infoTiempo = "";
-    
+
     if (diasRestantes > 0) {
       infoTiempo = ` (en ${diasRestantes} días)`;
     } else if (diasRestantes === 0) {
@@ -205,13 +209,13 @@ async function agregarEvento() {
     const fecha = await preguntar("3. Fecha del evento (YYYY-MM-DD): ");
     const precio = await preguntar("4. Precio en pesos del evento: ");
     const estado = await preguntar("5. Estado del evento: ");
-    
+
 
     const nuevoEvento = new Evento(nombre, tipo, fecha, parseFloat(precio), estado);
     eventos.push(nuevoEvento);
     console.log(`\n✅ ${nuevoEvento.nombre} ha sido agregado exitosamente`);
     console.log(`   Fecha programada: ${nuevoEvento.fechaFormateada}`);
-    
+
     if (nuevoEvento.diasRestantes >= 0) {
       console.log(`   Faltan ${nuevoEvento.diasRestantes} días`);
     }
@@ -244,10 +248,10 @@ async function modificarFechas() {
     }
 
     const nuevaFecha = await preguntar("Ingrese la nueva fecha (YYYY-MM-DD): ");
-    
+
     const fechaAnterior = eventos[eventoIndex].fechaFormateada;
     eventos[eventoIndex].cambiarFecha(nuevaFecha);
-    
+
     console.log(`\n✅ Fecha modificada exitosamente:`);
     console.log(`   Fecha anterior: ${fechaAnterior}`);
     console.log(`   Nueva fecha: ${eventos[eventoIndex].fechaFormateada}`);
@@ -268,7 +272,7 @@ async function verEventosPorFecha() {
 
   try {
     const fechaBuscar = await preguntar("Ingrese la fecha a buscar (YYYY-MM-DD): ");
-    
+
     // Validar y parsear fecha de búsqueda
     const regex = /^\d{4}-\d{2}-\d{2}$/;
     if (!regex.test(fechaBuscar)) {
@@ -283,7 +287,7 @@ async function verEventosPorFecha() {
     }
 
     // Filtrar eventos usando isSameDay de date-fns para comparación precisa
-    const eventosEnFecha = eventos.filter(evento => 
+    const eventosEnFecha = eventos.filter(evento =>
       isSameDay(evento.fecha, fechaBuscada)
     );
 
@@ -325,7 +329,7 @@ async function eliminarEvento() {
     }
 
     const confirmacion = await preguntar(`¿Está seguro de eliminar "${eventos[eventoIndex].nombre}"? (s/n): `);
-    
+
     if (confirmacion.toLowerCase() === 's' || confirmacion.toLowerCase() === 'si') {
       const eventoEliminado = eventos.splice(eventoIndex, 1)[0];
       console.log(`\n✅ Evento "${eventoEliminado.nombre}" eliminado exitosamente`);
@@ -340,7 +344,7 @@ async function eliminarEvento() {
 // Función adicional para mostrar todos los eventos ordenados por fecha
 async function mostrarTodosLosEventos() {
   console.log("\n=== Todos los Eventos ===");
-  
+
   if (eventos.length === 0) {
     console.log("No hay eventos registrados.");
     return;
