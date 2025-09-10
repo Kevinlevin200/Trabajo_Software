@@ -29,28 +29,61 @@ Es una alternativa ligera y eficiente frente a librerías más pesadas como mome
 
 # Implementación
 
-La aplicación de consola fue desarrollada en Node.js con un menú interactivo que incluye al menos tres opciones:
+- La aplicación de consola fue desarrollada en Node.js con un menú interactivo que incluye al menos tres opciones:
 
-Registrar un evento con nombre y fecha.
+- Registrar un evento con nombre y fecha.
 
-Calcular diferencia de días entre la fecha actual y un evento.
+- Calcular diferencia de días entre la fecha actual y un evento.
 
-Formatear una fecha en diferentes estilos (ej. dd/MM/yyyy, MMMM dd, yyyy).
+- Formatear una fecha en diferentes estilos (ej. dd/MM/yyyy, MMMM dd, yyyy).
 
-(no se si cambiar eso de arriba de la implementacion, ud digame)
+Tambien cuenta con las siguientes opciones:
 
-El menú se despliega en consola y guía al usuario paso a paso.
-El uso de date-fns es clave para manejar el cálculo y formato de fechas de manera confiable y sencilla.
+1. **Agregar evento** = Permite registrar un evento con nombre, tipo, fecha, precio y estado.
+2. **Modificar fechas** = Cambiar la fecha de un evento ya existente.
+3. **Ver eventos por fecha** = Buscar todos los eventos programados en una fecha determinada.
+4. **Eliminar un evento** = Remover un evento registrado con confirmación de seguridad.
+5. **Ver todos los eventos** = Mostrar los eventos registrados, ordenados por fecha.
+6. **Salir** = Cierra el programa.
 
-# Estructura del proyecto
+La librería **date-fns** se utiliza para:
 
--no se jaja-
+* Validar fechas ingresadas por el usuario.
+* Formatear fechas en distintos estilos (`dd/MM/yyyy`, `yyyy-MM-dd`).
+* Calcular diferencias de días entre la fecha actual y un evento.
+* Comparar fechas con precisión (ejemplo: eventos en el mismo día).
 
-Video de presentación
+## Instalación
 
-(aqui el video)
+1. Clonar el repositorio:
 
-# Autores
+   ```bash
+   git clone https://github.com/Kevinlevin200/Trabajo_Software.git
+   cd Trabajo_Software
+   ```
 
-Kevin Santiago Rivero Rueda
-Juan Camilo Rojas Arenas
+2. Instalar dependencias:
+
+   ```bash
+   npm install
+   ```
+
+---
+
+## Uso del programa
+
+Ejecutar el programa en consola:
+
+bash
+node main.js
+
+## Video de presentación
+
+(Enlace)
+
+---
+
+## Autores
+
+* Juan Camilo Rojas Arenas
+* Kevin Santiago Rivero Rueda
