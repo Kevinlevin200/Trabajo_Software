@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/Kevinlevin200/Trabajo_Software#readme",
   "dependencies": {
-    "date-fns": "^4.1.0",
-    "inquirer": "^12.9.4"
+    "date-fns": "^4.1.0"
   }
 }
