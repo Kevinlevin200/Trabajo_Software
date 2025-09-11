@@ -1,4 +1,4 @@
-const { format, parseISO, isValid, isSameDay, addDays, differenceInDays } = require('date-fns');
+const { format, parseISO, isValid, isSameDay, differenceInDays } = require('date-fns');
 const { es } = require('date-fns/locale');
 
 let eventos = []
